@@ -35,7 +35,6 @@ class Category extends Component {
         <h2 className="h3">Kategori</h2>
         <div className="row">
           {
-
             this.state.categories ? this.state.categories.map(category =>
               <div key={category.id} className="col-3 rounded" onClick={_ => this.onClickHandler(category.id)}>
                 <img src={category.img} alt="" />

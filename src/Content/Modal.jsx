@@ -78,7 +78,7 @@ class Modal extends Component {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-body d-flex justify-content-center flex-column">
-              <img src={this.state.item ? this.state.item.image : 'https://belajar-react.smkmadinatulquran.sch.id/image/masakan1.jpg'} className="img-modal img-thumbnail" />
+              <img src={this.state.item ? this.state.item.image : 'https://belajar-react.smkmadinatulquran.sch.id/image/masakan1.jpg'} className="img-modal img-thumbnail mx-3" />
               <h3>{this.state.item ? this.state.item.name : ''}</h3>
               <div className="wrapper d-flex">
                 <p className="mr-2">⭐ {this.state.item ? this.state.item.rating : ''}</p>

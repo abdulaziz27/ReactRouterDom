@@ -160,12 +160,12 @@ input.form-control {
     font-family: Times;
     line-height: 1;
     letter-spacing: 3px;
-    -webkit-background-clip: text;
+    /* -webkit-background-clip: text; */
 }
 
 #rating .star.active{
     -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    /* -webkit-background-clip: text; */
 
 }
 
@@ -238,3 +238,4 @@ p.time {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+                   

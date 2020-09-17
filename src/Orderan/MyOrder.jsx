@@ -50,7 +50,7 @@ class MyOrder extends Component {
             <div className="wrapper">
               <img src="https://image.shutterstock.com/image-vector/shipping-fast-delivery-man-riding-260nw-1573225051.jpghttps://image.shutterstock.com/image-vector/shipping-fast-delivery-man-riding-260nw-1573225051.jpg" alt="" height="35" />
             </div>
-            <p className="mb-0">jl.Cipondok</p>
+            <p className="mb-0">jl.Cipondok no 13...</p>
             <p className="mb-0">Gratis</p>
           </div>
         </div>
