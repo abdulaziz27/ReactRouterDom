@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
-const ProtectedUserLogin = ({ children, ...rest }) => {
+const ProtectedRouter = ({ children, ...rest }) => {
   const [auth, setAuth] = React.useState(true);
   React.useMemo(() => {
     if (localStorage.getItem("token")) {
@@ -17,4 +17,4 @@ const ProtectedUserLogin = ({ children, ...rest }) => {
   );
 };
 
-export default ProtectedUserLogin;
+export default ProtectedRouter;

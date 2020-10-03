@@ -15,8 +15,8 @@ const Login = () => {
               <Input label={"Password"} className="form-control" />
               <Button className="form-control btn btn-success" label={"Login"} />
             </form>
-            <Link to="/register">register</Link>
-            <Link to="/about">About</Link>
+            <Link to="/register" className="ml-5 mr-5">register</Link>
+            <Link to="/about" className="ml-5">About</Link>
           </div>
         </div>
       </React.Fragment>

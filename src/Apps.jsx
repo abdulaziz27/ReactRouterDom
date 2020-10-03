@@ -7,7 +7,7 @@ import About from "./Page/About";
 import DetailUser from "./Page/DetailUser";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ProtectedRoute from "./Component/ProtectedRoute";
-import ProtectedUserLogin from "./Component/ProtectedUserLogin";
+import ProtectedUserLogin from "./Component/ProtectedRouter";
 import Login from "./Page/Login";
 import Register from "./Page/Register";
 

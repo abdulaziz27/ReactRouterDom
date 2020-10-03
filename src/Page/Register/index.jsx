@@ -58,8 +58,8 @@ const Register = (props) => {
                 label={"Register"}
               />
             </form>
-            <Link to="/login">Back to login</Link>
-            <Link to="/about">About</Link>
+            <Link to="/login" className="ml-5 mr-5">Back to login</Link>
+            <Link to="/about" className="ml-5">About</Link>
           </div>
         </div>
       </React.Fragment>
