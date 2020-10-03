@@ -1,71 +1,44 @@
-import React, { Component } from 'react'
+import React from 'react';
+import './css/style.css'
+import Navbar from "./Page/Navbar";
+import Home from "./Page/Home";
+import Contact from "./Page/Contact";
+import About from "./Page/About";
+import DetailUser from "./Page/DetailUser";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ProtectedRoute from "./Component/ProtectedRoute";
+import ProtectedUserLogin from "./Component/ProtectedUserLogin";
+import Login from "./Page/Login";
+import Register from "./Page/Register";
 
-import Navigasi from './Navbar/Navbar'
-import Header from './Content/Header'
-import Category from './Content/Category'
-import Populer from './Content/Populer'
-import MyOrder from './Orderan/MyOrder'
-import Modal from './Content/Modal'
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            category: '0',
-            popular: [],
-            base_url: 'https://belajar-react.smkmadinatulquran.sch.id/api/',
-            item: null,
-            order: {},
-        }
-    }
-
-    popularOnChange = (event) => {
-        return fetch(`${this.state.base_url}populer?category_id=${event}`,
-          {
-            method: 'POST',
-          })
-          .then(response => response.json())
-          .then(responseJson => {
-            this.setState({
-              popular: responseJson.data
-            })
-          })
-          .catch(error => 'error')
-    }
-
-    handlerModal = (item) => {
-        this.setState({
-          item: item,
-        })
-    }
-    
-      onOrderHandler = data => {
-        this.setState({
-          order: data
-        });
-        console.log();
-    }
-
-    render() {
-    return (      
-        <div className="">
-            <Navigasi />
-            <div className="container-fluid p-0">
-            <div className="row mt-5">
-                <div className="col-9 pt-5">
-                <Header />
-                <Category popular={this.popularOnChange} />
-                <Populer popular={this.state.popular} onShowModal={this.handlerModal} />
-                </div>
-                <div className="col-3 bg-light sidenav pt-5">
-                <MyOrder item={this.state.order} />
-                </div>
-            </div>
-            </div>
-            <Modal item={this.state.item} onOrderHandler={this.onOrderHandler} />
+export default function App() {
+    return (
+        <div className="App">
+            <BrowserRouter>
+            <Switch>
+            <ProtectedRoute exact path="/">
+                <Navbar>
+                <Home />
+                </Navbar>
+            </ProtectedRoute>
+            <Route path="/about">
+                <Navbar>
+                <About />
+                </Navbar>
+            </Route>
+            <Route path="/contact">
+                <Navbar>
+                <Contact />
+                </Navbar>
+            </Route>
+            <Route path="/DetailUser/:id">
+                <DetailUser />
+            </Route>
+            <ProtectedUserLogin path="/login" component={Login} />
+            <ProtectedUserLogin path="/register" component={Register} />
+            </Switch>
+        </BrowserRouter>
         </div>
-        )
-    }
+    );
 }
-export default App
